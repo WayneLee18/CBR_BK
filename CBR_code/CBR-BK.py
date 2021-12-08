@@ -95,10 +95,6 @@ def get_result1(k, dist, y_train, y_test):
 data = pd.read_csv('german.csv')
 print(data.isnull().values.any())
 ###############################################################################################
-rob_scaler = RobustScaler()
-for column in data.columns:
-    if column != 'credit_risk':
-        data[column] = rob_scaler.fit_transform(data[column].values.reshape(-1,1))
 ###############################################################################################
 seed = 42
 data_X_train = []
